@@ -34,9 +34,11 @@ namespace _0_ElvToCAD
 
         private void 檔案ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog FBD = new FolderBrowserDialog();
+            FolderBrowserDialogEx FBD = new FolderBrowserDialogEx();
+            FBD.Title = "選擇資料夾";
             FBD.SelectedPath = this.txtPath.Text;
-            if (FBD.ShowDialog() == DialogResult.OK)
+            FBD.ShowEditbox = true;
+            if (FBD.ShowDialog(this) == DialogResult.OK)
             {
                 this.txtPath.Text = FBD.SelectedPath;
                 this.Text = "Data Process (" + this.txtPath.Text + ")";
@@ -77,8 +79,7 @@ namespace _0_ElvToCAD
             this.txt_showMessage.Text = Mes;
         }
     }
-
-
+     
 
 
 

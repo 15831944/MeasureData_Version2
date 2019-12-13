@@ -56,8 +56,43 @@ namespace _0_ElvToCAD
             if (!this.LST.LoadingDone) return this.LST.ErrorMes;
 
             ErrorMes = this.LST.ErrorMes;
-            ErrorMes += this.DrawDXF(this.LST.BFFF_DATAs, this.LST.Coordinates, this.LST.DirectoryName);
+
+            /// 剔除重複繪製線段 
+
+            ErrorMes += this.DrawDXF(TakeOffSameLine(this.LST.BFFF_DATAs), this.LST.Coordinates, this.LST.DirectoryName);
             return ErrorMes;
+        }
+
+
+        private List<BFFF> TakeOffSameLine(List<BFFF> Data)
+        {
+            List<BFFF> RES = new List<BFFF>();
+            List<string> Rec = new List<string>();
+            foreach (BFFF item in Data)
+            {
+                string t1 = item.BF;
+                string t2 = item.FF;
+                string ss = item.Station;
+                string c1 = ss + t2;
+                string c2 = ss + t1;
+                string c3 = t1 + ss;
+                string c4 = t2 + ss;
+                if (!Rec.Contains(c1) &&
+                    !Rec.Contains(c2) &&
+                    !Rec.Contains(c3) &&
+                    !Rec.Contains(c4))
+                {
+                    RES.Add(new BFFF(item.BF, item.Station,CASE = "LST"));
+                    RES.Add(new BFFF(item.Station, item.FF, CASE = "LST"));
+                    Rec.Add(c1);
+                    Rec.Add(c2);
+                    Rec.Add(c3);
+                    Rec.Add(c4);
+                     
+                }
+            }
+
+            return RES;
         }
 
 

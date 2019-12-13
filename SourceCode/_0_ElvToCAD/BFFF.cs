@@ -19,12 +19,18 @@ namespace _0_ElvToCAD
         public string std;
         public string mark;
         public bool IsLoading = false;
+        public string Station = "";
         public BFFF(string data, string CASE = "OUT")
         {
             if (CASE == "OUT") OUTProcess(data);
-            if (CASE == "LST") LSTProcess(data); 
+            if (CASE == "LST") LSTProcess(data);
         }
 
+        public BFFF(string BF, string FF, string CASE = "OUT")
+        {
+            this.BF = BF;
+            this.FF = FF; 
+        }
 
         private void LSTProcess(string data)
         {
@@ -36,13 +42,15 @@ namespace _0_ElvToCAD
 
 
 
-            char[] ss = data.ToCharArray(); 
+            char[] ss = data.ToCharArray();
             this.RowNumber = CharToString(ss, 0, 4, true);
-            this.BF = CharToString(ss, 5, 13, true); 
+            this.BF = CharToString(ss, 5, 13, true);
             this.FF = CharToString(ss, 23, 31, true);
-             
-            if (this.RowNumber != "" && this.BF != "" && this.FF != "") IsLoading = true; 
-            
+            this.Station = CharToString(ss, 14, 22, true);
+
+
+            if (this.RowNumber != "" && this.BF != "" && this.FF != "") IsLoading = true;
+
 
         }
 

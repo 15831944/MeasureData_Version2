@@ -24,7 +24,7 @@ namespace _0_ElvToCAD
             this.CASE = CASE;
 
             this.DirectoryName = Path.GetFileNameWithoutExtension(Path.GetDirectoryName(path));
-            LoadData(path);
+            this.LoadData(path);
 
             this.LoadingDone = true;
             this.ErrorMes = this.ErrorMes == "" ? "" : "前後視資料\r\n" + this.ErrorMes + "  列資料有誤\r\n\r\n";
