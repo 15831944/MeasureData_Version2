@@ -56,12 +56,12 @@ namespace _0_ElvToCAD
 
 
         private void lSTToDXFToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        { 
+            List<string> datas = Directory.GetFiles(this.txtPath.Text, "*.lst*").ToList();
 
-
-            _0_Main_Draw_DXF DC = new _0_Main_Draw_DXF(this.txtPath.Text,"LST"); 
+            _0_Main_Draw_DXF DC = new _0_Main_Draw_DXF(this.txtPath.Text, "LST");
             this.txt_showMessage.Text = DC.Draw_LST() + "程式執行結束";
-
+             
         }
 
 

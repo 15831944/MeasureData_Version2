@@ -82,8 +82,14 @@ namespace _0_ElvToCAD
                     !Rec.Contains(c3) &&
                     !Rec.Contains(c4))
                 {
-                    RES.Add(new BFFF(item.BF, item.Station,CASE = "LST"));
-                    RES.Add(new BFFF(item.Station, item.FF, CASE = "LST"));
+                    if (item.BF == "")
+                    {
+
+                    }
+
+                    if (item.BF != "") RES.Add(new BFFF(item.BF, item.Station, CASE = "LST"));
+                    if (item.FF != "") RES.Add(new BFFF(item.Station, item.FF, CASE = "LST")); 
+                    
                     Rec.Add(c1);
                     Rec.Add(c2);
                     Rec.Add(c3);

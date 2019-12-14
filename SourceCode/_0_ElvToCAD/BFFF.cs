@@ -48,10 +48,13 @@ namespace _0_ElvToCAD
             this.FF = CharToString(ss, 23, 31, true);
             this.Station = CharToString(ss, 14, 22, true);
 
+            if ((this.RowNumber != "" && this.BF != "") ||
+                (this.RowNumber != "" && this.FF != "") )
+            {
+                IsLoading = true;
+            }
 
-            if (this.RowNumber != "" && this.BF != "" && this.FF != "") IsLoading = true;
-
-
+            if (this.Station == "") IsLoading = false; 
         }
 
         private string CharToString(char[] ss, int st, int en, bool IsTrim)
