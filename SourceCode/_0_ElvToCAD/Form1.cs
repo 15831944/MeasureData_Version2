@@ -44,6 +44,7 @@ namespace _0_ElvToCAD
                 this.Text = "Data Process (" + this.txtPath.Text + ")";
                 this.txt_showMessage.Text = "";
                 this.GASF.Saving();
+                this.txt_showMessage.Text = "檔案路徑為 : " + this.txtPath.Text;
             }
         }
 

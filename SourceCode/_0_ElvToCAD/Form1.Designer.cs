@@ -33,9 +33,9 @@
             this.執行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oUTToCADToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.oUTToCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lSTToDXFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.txt_showMessage = new System.Windows.Forms.TextBox();
-            this.lSTToDXFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.執行ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(604, 32);
+            this.menuStrip1.Size = new System.Drawing.Size(826, 32);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,6 +82,13 @@
             this.oUTToCSVToolStripMenuItem.Text = "OUT to CSV";
             this.oUTToCSVToolStripMenuItem.Click += new System.EventHandler(this.oUTToCSVToolStripMenuItem_Click);
             // 
+            // lSTToDXFToolStripMenuItem
+            // 
+            this.lSTToDXFToolStripMenuItem.Name = "lSTToDXFToolStripMenuItem";
+            this.lSTToDXFToolStripMenuItem.Size = new System.Drawing.Size(186, 28);
+            this.lSTToDXFToolStripMenuItem.Text = "LST to DXF";
+            this.lSTToDXFToolStripMenuItem.Click += new System.EventHandler(this.lSTToDXFToolStripMenuItem_Click);
+            // 
             // txtPath
             // 
             this.txtPath.Location = new System.Drawing.Point(248, 371);
@@ -100,21 +107,14 @@
             this.txt_showMessage.Multiline = true;
             this.txt_showMessage.Name = "txt_showMessage";
             this.txt_showMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_showMessage.Size = new System.Drawing.Size(580, 347);
+            this.txt_showMessage.Size = new System.Drawing.Size(802, 347);
             this.txt_showMessage.TabIndex = 3;
-            // 
-            // lSTToDXFToolStripMenuItem
-            // 
-            this.lSTToDXFToolStripMenuItem.Name = "lSTToDXFToolStripMenuItem";
-            this.lSTToDXFToolStripMenuItem.Size = new System.Drawing.Size(186, 28);
-            this.lSTToDXFToolStripMenuItem.Text = "LST to DXF";
-            this.lSTToDXFToolStripMenuItem.Click += new System.EventHandler(this.lSTToDXFToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 405);
+            this.ClientSize = new System.Drawing.Size(826, 405);
             this.Controls.Add(this.txt_showMessage);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.menuStrip1);
