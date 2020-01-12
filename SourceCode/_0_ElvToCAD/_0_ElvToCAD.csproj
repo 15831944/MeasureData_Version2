@@ -55,7 +55,9 @@
     <Compile Include="BFFF.cs" />
     <Compile Include="Coordinate.cs" />
     <Compile Include="DXFGenerator.cs" />
+    <Compile Include="D_OUT_Compare.cs" />
     <Compile Include="FolderBrowserDialogEx.cs" />
+    <Compile Include="Function.cs" />
     <Compile Include="GeneralAutoSavingFormDatasClass.cs" />
     <Compile Include="LST_DATAs.cs" />
     <Compile Include="OUTtoDxf\CSV_CAD_DATAs.cs" />

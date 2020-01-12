@@ -79,6 +79,11 @@ namespace _0_ElvToCAD
             Mes += Mes == "" ? "無檔案" : "轉檔完成";
             this.txt_showMessage.Text = Mes;
         }
+
+        private void oUT比較ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
      
 

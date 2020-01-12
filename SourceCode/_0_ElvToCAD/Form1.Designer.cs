@@ -36,6 +36,7 @@
             this.lSTToDXFToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.txt_showMessage = new System.Windows.Forms.TextBox();
+            this.oUT比較ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +64,8 @@
             this.執行ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.oUTToCADToolStripMenuItem,
             this.oUTToCSVToolStripMenuItem,
-            this.lSTToDXFToolStripMenuItem});
+            this.lSTToDXFToolStripMenuItem,
+            this.oUT比較ToolStripMenuItem});
             this.執行ToolStripMenuItem.Name = "執行ToolStripMenuItem";
             this.執行ToolStripMenuItem.Size = new System.Drawing.Size(60, 28);
             this.執行ToolStripMenuItem.Text = "執行";
@@ -110,6 +112,13 @@
             this.txt_showMessage.Size = new System.Drawing.Size(802, 347);
             this.txt_showMessage.TabIndex = 3;
             // 
+            // oUT比較ToolStripMenuItem
+            // 
+            this.oUT比較ToolStripMenuItem.Name = "oUT比較ToolStripMenuItem";
+            this.oUT比較ToolStripMenuItem.Size = new System.Drawing.Size(186, 28);
+            this.oUT比較ToolStripMenuItem.Text = "OUT 比較";
+            this.oUT比較ToolStripMenuItem.Click += new System.EventHandler(this.oUT比較ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -140,6 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem oUTToCSVToolStripMenuItem;
         private System.Windows.Forms.TextBox txt_showMessage;
         private System.Windows.Forms.ToolStripMenuItem lSTToDXFToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem oUT比較ToolStripMenuItem;
     }
 }
 

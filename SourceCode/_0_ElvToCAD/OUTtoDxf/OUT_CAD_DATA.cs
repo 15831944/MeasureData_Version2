@@ -22,7 +22,8 @@ namespace _0_ElvToCAD
             this.FileName = Path.GetFileNameWithoutExtension(path);
             this.DirectoryName = Path.GetFileNameWithoutExtension(Path.GetDirectoryName(path));
             this.DATAs = new List<BFFF>();
-            this.Datas = this.LoadingData(path, KEYWORD);
+
+            this.Datas = Function.ReadDatas.LoadingData(path, KEYWORD);
 
             if (IsInObject)
             {
