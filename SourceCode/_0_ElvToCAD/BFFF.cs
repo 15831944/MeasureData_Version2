@@ -20,6 +20,7 @@ namespace _0_ElvToCAD
         public string mark;
         public bool IsLoading = false;
         public string Station = "";
+        public int ITER = -1;
         public BFFF(string data, string CASE = "OUT")
         {
             if (CASE == "OUT") OUTProcess(data);
@@ -29,7 +30,24 @@ namespace _0_ElvToCAD
         public BFFF(string BF, string FF, string CASE = "OUT")
         {
             this.BF = BF;
-            this.FF = FF; 
+            this.FF = FF;
+        }
+
+
+        public bool IsSameGroup(BFFF data, out int Reverse)
+        {
+            Reverse = 0;
+            if (this.BF == data.BF && this.FF == data.FF)
+            {
+                Reverse = 1;
+                return true;
+            }
+            else if (this.BF == data.FF && this.FF == data.BF)
+            {
+                Reverse = -1;
+                return true;
+            }
+            return false;
         }
 
         private void LSTProcess(string data)
@@ -49,12 +67,12 @@ namespace _0_ElvToCAD
             this.Station = CharToString(ss, 14, 22, true);
 
             if ((this.RowNumber != "" && this.BF != "") ||
-                (this.RowNumber != "" && this.FF != "") )
+                (this.RowNumber != "" && this.FF != ""))
             {
                 IsLoading = true;
             }
 
-            if (this.Station == "") IsLoading = false; 
+            if (this.Station == "") IsLoading = false;
         }
 
         private string CharToString(char[] ss, int st, int en, bool IsTrim)

@@ -14,7 +14,7 @@ namespace _0_ElvToCAD
 {
     public partial class Form1 : Form
     {
-        GeneralAutoSavingFormDatasClass GASF; 
+        GeneralAutoSavingFormDatasClass GASF;
         string[] subTitle = new string[] { "out", "csv" };
 
         public Form1()
@@ -46,23 +46,25 @@ namespace _0_ElvToCAD
                 this.GASF.Saving();
                 this.txt_showMessage.Text = "檔案路徑為 : " + this.txtPath.Text;
             }
+
+
         }
 
         private void oUTToCADToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            _0_Main_Draw_DXF DC = new _0_Main_Draw_DXF(this.txtPath.Text );
-            this.txt_showMessage.Text = DC.Draw_OUT() + "程式執行結束"; 
+            _0_Main_Draw_DXF DC = new _0_Main_Draw_DXF(this.txtPath.Text);
+            this.txt_showMessage.Text = DC.Draw_OUT() + "程式執行結束";
         }
 
 
         private void lSTToDXFToolStripMenuItem_Click(object sender, EventArgs e)
-        { 
+        {
             List<string> datas = Directory.GetFiles(this.txtPath.Text, "*.lst*").ToList();
 
             _0_Main_Draw_DXF DC = new _0_Main_Draw_DXF(this.txtPath.Text, "LST");
             this.txt_showMessage.Text = DC.Draw_LST() + "程式執行結束";
-             
+
         }
 
 
@@ -83,9 +85,24 @@ namespace _0_ElvToCAD
         private void oUT比較ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            List<string> Folders = Directory.GetDirectories(this.txtPath.Text).ToList();
+            Folders.Add(this.txtPath.Text);
+
+            List<string> OUTs = new List<string>();
+            foreach (string ff in Folders)
+            {
+                foreach (string oo in Directory.GetFiles(ff, "*.out*"))
+                {
+                    OUTs.Add(oo);
+                }
+            }
+
+            D_OUT_Compare pp = new D_OUT_Compare(this.txtPath.Text, OUTs);
+            string res = pp.CompareAndSave();
+            this.txt_showMessage.Text = res;
         }
     }
-     
+
 
 
 

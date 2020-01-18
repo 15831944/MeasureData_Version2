@@ -10,8 +10,8 @@ namespace _0_ElvToCAD
     {
         public static class ReadDatas
         {
-             
-            public static List<BFFF> GetBFFF(string fPath, 
+
+            public static List<BFFF> GetBFFF(string fPath,
                                                      string KEYWORD,
                                                      string TargetStr = "",
                                                      string CASE = "OUT")
@@ -21,8 +21,11 @@ namespace _0_ElvToCAD
                 foreach (string item in Datas)
                 {
                     BFFF test = new BFFF(item, CASE);
-                    test.Station = test.Station.Replace(TargetStr, "");
-                    if (test.IsLoading) DATAs.Add(test);
+                    if (!test.IsLoading) continue;
+
+                    test.BF = test.BF.Replace(TargetStr, "");
+                    test.FF = test.FF.Replace(TargetStr, "");
+                    DATAs.Add(test);
                 }
 
                 return DATAs;
@@ -32,7 +35,8 @@ namespace _0_ElvToCAD
             public static List<string> LoadingData(string path, string KEYWORD)
             {
                 List<string> Datas = new List<string>();
-                using (StreamReader sr = new StreamReader(path, Encoding.Default, true))
+                using (StreamReader sr =
+                    new StreamReader(path, Encoding.Default, true))
                 {
                     bool IsReading = false;
                     while (sr.Peek() != -1)
